@@ -91,7 +91,7 @@ Blair connects the GitHub repo once, in the Cloudflare dashboard (Workers & Page
 
 Do not add `wrangler.toml`, `package.json`, `vercel.json`, or a Pages Function. Do not set a custom domain in the same step as ordinary content edits.
 
-`gbs-site/dist/_headers` sets `Content-Type: image/webp` for `.webp` (this host used to send `application/octet-stream` for `magnum.webp`). It also sets the types for `robots.txt` and `sitemap.xml`. Do not add `X-Content-Type-Options: nosniff` until a live response shows `image/webp`; nosniff before the type is correct can hide the logo.
+Pages sets `Content-Type` itself. Checked against the live project and the Pages asset MIME rules: `.webp` is `image/webp`, `robots.txt` is `text/plain; charset=utf-8`, and `sitemap.xml` is `application/xml`. Do not add a `_headers` `Content-Type` for those. The first matching rule replaces the type, and a second rule that matches the same path appends another value. That is why `/magnum.webp` was sent as `image/webp, image/webp` while both `/magnum.webp` and `/*.webp` were listed. There is no `_headers` file. Pages already sends `X-Content-Type-Options: nosniff`.
 
 `404.html` is served automatically for unknown paths. Keep it.
 
