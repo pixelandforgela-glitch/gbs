@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /thanks/
+
+Sitemap: https://gbs-usa.build/sitemap.xml
