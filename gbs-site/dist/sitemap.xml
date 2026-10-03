@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Product pages stay out of this sitemap until Blair confirms the spec copy. See gbs-site/pending-claims.md in the repo (that file is not published). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://gbs-usa.build/</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+</urlset>
