@@ -2,7 +2,7 @@
 
 This is the only instruction file for this repo. `CLAUDE.md`, `GEMINI.md`, and `.github/copilot-instructions.md` only point here. If a tool loads one of those, come back and follow this file.
 
-Green Building Solutions USA sells building materials to construction professionals. The public site is a small hand-written static site: HTML and CSS, no JavaScript, no framework, no build. Blair owns it and is the only person who merges to `main`.
+Green Building Solutions USA sells building materials to construction professionals. The public site is a small hand-written static site: HTML and CSS, no framework, no build. The only JavaScript is the Span chat widget Blair approved on Oct 4, 2026. Blair owns it and is the only person who merges to `main`.
 
 ## Where the files are
 
@@ -54,7 +54,8 @@ Approved product sentences already on the home page. These are the only product 
 ## Hard rules
 
 - No framework, no bundler, no `package.json`, no npm, no Node build, no React/Vue/Next, no templating step, no site generator.
-- Near-zero cost, simple enough for one person. Cloudflare Pages on the free plan is the host. Do not add paid services, analytics, trackers, cookies, or a form backend unless Blair asks in that task.
+- No JavaScript except one approved script. On Oct 4, 2026 Blair approved the Span chat widget loaded from `https://span.scaffold.site/widget-loader.js`. The exact tag sits immediately before `</body>` on `gbs-site/dist/index.html`, `gbs-site/dist/mgo-products/index.html`, and `gbs-site/dist/qrock-acoustic-sheathing/index.html`. Do not add it to `404.html`. Do not add any other script.
+- Near-zero cost, simple enough for one person. Cloudflare Pages on the free plan is the host. Do not add paid services, analytics, trackers, cookies, or a form backend unless Blair asks in that task. The Span widget above is the one exception already approved.
 - Do not publish unconfirmed product claims. That includes the Q-Rock SKU matrix, thicknesses, pallet counts, the 30/60/120-minute sentence, recycled-fiber, antimicrobial, and low-VOC claims, and the MgO “Magnum 111”, fiberglass-reinforced, and mold/mildew/insect claims. Full removed text is in `gbs-site/pending-claims.md`. Do not put it back, and do not hide it in HTML comments (view-source is public).
 - Do not invent product data, prices, certifications, test results, warranties, lead times, testimonials, project photos, or company details. If it is not already on a public page or written in this file as approved, leave it out.
 - Do not publish placeholder contact details. Never replace the live phone, email, or footer with a `PLACEHOLDER_` token or a guess.
