@@ -4,7 +4,14 @@
   const form = document.getElementById('gbs-contact');
   if (!form) return;
   form.noValidate = true;
-  const endpoint = 'https://span.scaffold.site/api/widget/intake?businessId=77546c9a-01fe-4c3c-b979-b2b4efe48b66';
+  function focusContactName() {
+    document.getElementById('contact-name').focus({ preventScroll: true });
+  }
+  document.querySelectorAll('a[href="#gbs-contact"]').forEach(function (link) {
+    link.addEventListener('click', function () { setTimeout(focusContactName, 0); });
+  });
+  if (window.location.hash === '#gbs-contact') setTimeout(focusContactName, 0);
+  const endpoint = 'https://span.scaffold.site/api/widget/intake?businessId=6137817c-4edf-4988-8642-3b2b1f194775';
   const emailAddress = 'info@gbs-usa.build';
   const status = document.getElementById('contact-status');
   const fallback = document.getElementById('contact-fallback');
