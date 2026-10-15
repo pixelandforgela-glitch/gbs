@@ -2,7 +2,7 @@
 
 This is the only instruction file for this repo. `CLAUDE.md`, `GEMINI.md`, and `.github/copilot-instructions.md` only point here. If a tool loads one of those, come back and follow this file.
 
-Green Building Solutions USA sells building materials to construction professionals. The public site is a small hand-written static site: HTML and CSS, no framework, no build. The only JavaScript is the Span chat widget Blair approved on Oct 4, 2026. Blair owns it and is the only person who merges to `main`.
+Green Building Solutions USA sells building materials to construction professionals. The public site is a small hand-written static site: HTML and CSS, no framework, no build. JavaScript is limited to the approved Span chat widget and the contact form requested on Oct 15, 2026. Blair owns it and is the only person who merges to `main`.
 
 ## Where the files are
 
@@ -54,7 +54,7 @@ Approved product sentences already on the home page. These are the only product 
 ## Hard rules
 
 - No framework, no bundler, no `package.json`, no npm, no Node build, no React/Vue/Next, no templating step, no site generator.
-- No JavaScript except one approved script. On Oct 4, 2026 Blair approved the Span chat widget loaded from `https://span.scaffold.site/widget-loader.js`. The exact tag sits immediately before `</body>` on `gbs-site/dist/index.html`, `gbs-site/dist/mgo-products/index.html`, and `gbs-site/dist/qrock-acoustic-sheathing/index.html`. Do not add it to `404.html`. Do not add any other script.
+- JavaScript is limited to the approved widget and `gbs-site/dist/contact.js` for the #contact inquiry form. On Oct 4, 2026 Blair approved the Span chat widget loaded from `https://span.scaffold.site/widget-loader.js`. The exact tag sits immediately before `</body>` on `gbs-site/dist/index.html`, `gbs-site/dist/mgo-products/index.html`, and `gbs-site/dist/qrock-acoustic-sheathing/index.html`. Do not add it to `404.html`. The contact form posts JSON to the same GBS business's Span intake and falls back to the existing sales mailbox. Do not add unrelated scripts.
 - Near-zero cost, simple enough for one person. Cloudflare Pages on the free plan is the host. Do not add paid services, analytics, trackers, cookies, or a form backend unless Blair asks in that task. The Span widget above is the one exception already approved.
 - Do not publish unconfirmed product claims. That includes the Q-Rock SKU matrix, thicknesses, pallet counts, the 30/60/120-minute sentence, recycled-fiber, antimicrobial, and low-VOC claims, and the MgO “Magnum 111”, fiberglass-reinforced, and mold/mildew/insect claims. Full removed text is in `gbs-site/pending-claims.md`. Do not put it back, and do not hide it in HTML comments (view-source is public).
 - Do not invent product data, prices, certifications, test results, warranties, lead times, testimonials, project photos, or company details. If it is not already on a public page or written in this file as approved, leave it out.
@@ -121,10 +121,11 @@ Blair has not answered these. Do not guess.
 3. A few lines are still public because they were not in the removal list (named at the bottom of `pending-claims.md`). Do not treat them as confirmed specs, and do not add more like them.
 4. Sales mailbox. `info@gbs-usa.build` stays on the site.
 5. Legal name, headquarters, the Los Angeles line, and the phone. Live footer and phone stay as written above. Public sources disagree; do not pick a winner.
-6. Quote form, thank-you page, and privacy policy. Not built. “Discuss your project” is a `mailto:info@gbs-usa.build` link.
+6. The #contact inquiry form posts to Span intake for GBS business `77546c9a-01fe-4c3c-b979-b2b4efe48b66`. The visible company and project type are included in `notes`; the payload `company` is the hidden honeypot. Only `{ok: true, leadId}` confirms success. Failed requests open a prefilled `mailto:info@gbs-usa.build` and retain an inline fallback link. Thank-you page and privacy policy are not built. Existing direct contact links remain.
 7. FAQ, gallery, downloads, and accessories content. Those URLs are not pages. Home links go to a mailto or to a section that exists.
 8. Old PDF path `/wp-content/uploads/2025/11/QRockFlyer_Approved.pdf`. Leave it a 404 until Blair supplies a file and asks for a redirect.
 9. Magnum’s permission for its data and logo, and the exact relationship wording.
 10. Sundello section. Approved sentence exists and is **not** on the site yet: “Sundello Homes is a partnership between Enterlectual and Green Building Solutions USA. Sundello homes are built with GBS's non-combustible, fire- and hurricane-rated MgO and steel materials, with Florida and Miami-Dade approval.” Do not add it unless the task asks. Do not add approval numbers.
 11. Whether to compress `hero.png` (about 2.7 MB). Ask first. Keep the current alt text and dimensions if you do.
 12. Domain cutover from the ChatGPT Site to Cloudflare Pages, including `www`. DNS stays at GoDaddy. Export the zone first. Change only the web records Pages tells Blair to change. Do not touch mail records. Do not do this as a side effect of a content PR.
+
