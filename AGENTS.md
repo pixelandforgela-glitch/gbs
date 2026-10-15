@@ -121,7 +121,7 @@ Blair has not answered these. Do not guess.
 3. A few lines are still public because they were not in the removal list (named at the bottom of `pending-claims.md`). Do not treat them as confirmed specs, and do not add more like them.
 4. Sales mailbox. `info@gbs-usa.build` stays on the site.
 5. Legal name, headquarters, the Los Angeles line, and the phone. Live footer and phone stay as written above. Public sources disagree; do not pick a winner.
-6. The #contact inquiry form posts to Span intake for GBS business `77546c9a-01fe-4c3c-b979-b2b4efe48b66`. The visible company and project type are included in `notes`; the payload `company` is the hidden honeypot. Only `{ok: true, leadId}` confirms success. Failed requests open a prefilled `mailto:info@gbs-usa.build` and retain an inline fallback link. Thank-you page and privacy policy are not built. Existing direct contact links remain.
+6. The #contact inquiry form posts to Span intake for GBS business `6137817c-4edf-4988-8642-3b2b1f194775`. The visible company and project type are included in `notes`; the payload `company` is the hidden honeypot. Only `{ok: true, leadId}` confirms success. Failed requests open a prefilled `mailto:info@gbs-usa.build` and retain an inline fallback link. Thank-you page and privacy policy are not built. Existing direct contact links remain.
 7. FAQ, gallery, downloads, and accessories content. Those URLs are not pages. Home links go to a mailto or to a section that exists.
 8. Old PDF path `/wp-content/uploads/2025/11/QRockFlyer_Approved.pdf`. Leave it a 404 until Blair supplies a file and asks for a redirect.
 9. Magnum’s permission for its data and logo, and the exact relationship wording.

@@ -3,7 +3,7 @@
 Serve `gbs-site/dist` with `python3 -m http.server --directory gbs-site/dist` from the repository root and open `http://127.0.0.1:8000/#contact`.
 
 - Check labels and keyboard focus, required name/email/message, email format, optional phone validation, company and all four project types. Whitespace-only required values must fail.
-- Inspect the POST with a browser network interception, without creating a production lead. It must target GBS business `77546c9a-01fe-4c3c-b979-b2b4efe48b66`, use JSON, put the visible company and project type in `notes`, and leave the reserved `company` honeypot empty.
+- Inspect the POST with a browser network interception, without creating a production lead. It must target GBS business `6137817c-4edf-4988-8642-3b2b1f194775`, use JSON, put the visible company and project type in `notes`, and leave the reserved `company` honeypot empty.
 - Mock `200 {"ok":true,"leadId":"test-lead"}`: an inline thank-you appears, fields reset, and no mailto opens. A second submit while pending must not send twice.
 - Mock HTTP errors, network failure, malformed JSON, `200 {"ok":true}` without a lead ID, and a timed-out request: keep the typed inquiry, show an inline error, open a prefilled mailto to `info@gbs-usa.build`, and expose a clickable fallback link.
 - Fill the offscreen `company` honeypot: no request or mailto should be sent.
