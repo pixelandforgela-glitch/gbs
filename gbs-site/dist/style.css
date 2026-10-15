@@ -11,3 +11,22 @@ header{padding-top:18px;padding-bottom:18px}h3{font-family:'Space Grotesk',sans-
 .hero-photo>img{object-position:50% 50%}@media(max-width:720px){.hero-photo{height:auto;aspect-ratio:3/2}.hero-photo>img{object-position:center}}
 .partners{background:#fff;padding:45px 5%;display:flex;align-items:center;gap:70px;border-bottom:1px solid #ddd}.partners h2{font-family:Inter,Arial,sans-serif;font-size:14px;letter-spacing:1.4px;text-transform:uppercase;font-weight:500;margin:0;flex-shrink:0}.partner-logos{display:flex;align-items:center;flex-wrap:wrap;gap:48px}.partner-logos img{width:280px;height:auto;filter:grayscale(1) contrast(8)}@media(max-width:720px){.partners{padding:35px 6%;gap:20px;flex-direction:column;align-items:flex-start}.partner-logos img{width:260px;max-width:100%}}
 .partner-logos .partner-magnum img{width:132px;height:auto;filter:brightness(0)}.partner-magnum{display:block;padding:8px 16px}
+
+
+/* Contact inquiry: existing brand tokens, with email and phone alongside. */
+.contact-with-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+.contact-details{grid-column:1;grid-row:2}.contact-with-form .contact-actions{overflow-wrap:anywhere}
+.contact-form{grid-column:2;grid-row:1 / span 2;min-width:0}
+.contact-form fieldset{border:0;padding:0;margin:0;min-width:0}
+.contact-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.contact-form-grid>div{min-width:0}.contact-wide{grid-column:1 / -1}
+.contact-form label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+.contact-form input,.contact-form select,.contact-form textarea{display:block;width:100%;min-width:0;border:1px solid var(--lime);border-radius:0;padding:12px;background:var(--paper);color:var(--ink);font:inherit;font-size:16px}
+.contact-form textarea{resize:vertical}.contact-form button{border:0;cursor:pointer;font-family:inherit;margin-top:20px;margin-bottom:0}
+.contact-form :is(input,select,textarea,button):focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+.contact-form [aria-invalid="true"]{border:3px solid var(--green)}
+.contact-form fieldset:disabled{opacity:.7}.contact-form button:disabled{cursor:wait}
+.contact-status{margin:18px 0 10px;overflow-wrap:anywhere}.contact-status:empty{margin:0}
+.contact-form a{text-decoration:underline}.contact-form [hidden]{display:none}
+.contact-trap,.contact-sr{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:720px){.contact-with-form{grid-template-columns:minmax(0,1fr);gap:28px}.contact-details,.contact-form{grid-column:1;grid-row:auto}.contact-form-grid{grid-template-columns:minmax(0,1fr)}}
