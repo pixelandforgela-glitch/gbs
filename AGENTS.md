@@ -12,6 +12,7 @@ Green Building Solutions USA sells building materials to construction profession
 | `gbs-site/dist/index.html` | Home page |
 | `gbs-site/dist/mgo-products/index.html` | MgO product page |
 | `gbs-site/dist/qrock-acoustic-sheathing/index.html` | Q-Rock product page |
+| `gbs-site/dist/request-a-quote/index.html` | Steel framing quote request page (Scaffold intake form) |
 | `gbs-site/dist/style.css` | Site styles, including the brand block at the bottom |
 | `gbs-site/dist/products.css` | Product-page styles, including table styles for later |
 | `gbs-site/pending-claims.md` | Product copy taken off the public pages. **Never publish this file.** |
@@ -54,7 +55,7 @@ Approved product sentences already on the home page. These are the only product 
 ## Hard rules
 
 - No framework, no bundler, no `package.json`, no npm, no Node build, no React/Vue/Next, no templating step, no site generator.
-- JavaScript is limited to the approved widget and `gbs-site/dist/contact.js` for the #contact inquiry form. On Oct 4, 2026 Blair approved the Span chat widget loaded from `https://span.scaffold.site/widget-loader.js`. The exact tag sits immediately before `</body>` on `gbs-site/dist/index.html`, `gbs-site/dist/mgo-products/index.html`, and `gbs-site/dist/qrock-acoustic-sheathing/index.html`. Do not add it to `404.html`. The contact form posts JSON to the same GBS business's Span intake and falls back to the existing sales mailbox. Do not add unrelated scripts.
+- JavaScript is limited to the approved widget and `gbs-site/dist/contact.js` for the #contact inquiry form. On Oct 4, 2026 Blair approved the Span chat widget loaded from `https://span.scaffold.site/widget-loader.js`. The exact tag sits immediately before `</body>` on `gbs-site/dist/index.html`, `gbs-site/dist/mgo-products/index.html`, and `gbs-site/dist/qrock-acoustic-sheathing/index.html`. Do not add it to `404.html`. The contact form posts JSON to the same GBS business's Span intake and falls back to the existing sales mailbox. On Oct 21, 2026 Blair approved the Scaffold quote form on `gbs-site/dist/request-a-quote/index.html`: one inline script and style block that posts JSON to `https://app.scaffold.site/api/lgs/intake` with GBS's public website key (the key only names the source; Scaffold checks the origin). Do not add unrelated scripts.
 - Near-zero cost, simple enough for one person. Cloudflare Pages on the free plan is the host. Do not add paid services, analytics, trackers, cookies, or a form backend unless Blair asks in that task. The Span widget above is the one exception already approved.
 - Do not publish unconfirmed product claims. That includes the Q-Rock SKU matrix, thicknesses, pallet counts, the 30/60/120-minute sentence, recycled-fiber, antimicrobial, and low-VOC claims, and the MgO “Magnum 111”, fiberglass-reinforced, and mold/mildew/insect claims. Full removed text is in `gbs-site/pending-claims.md`. Do not put it back, and do not hide it in HTML comments (view-source is public).
 - Do not invent product data, prices, certifications, test results, warranties, lead times, testimonials, project photos, or company details. If it is not already on a public page or written in this file as approved, leave it out.
